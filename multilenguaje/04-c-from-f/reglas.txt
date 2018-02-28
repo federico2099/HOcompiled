@@ -5,7 +5,7 @@ gfortran -c f-main.f90 -o f-main.o
 En este caso se llega hasta la compilación II. Es decir, se genera el objeto
 f-main.f90 como un archivo binario en lenguaje de máquina.
 
-2- Compilé el c-sum-c de la siguiente manera:
+2- Compilé el c-sum.c de la siguiente manera:
 
 gcc -c c-sum.c -o c-sum.o
 
