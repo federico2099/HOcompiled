@@ -1,0 +1,20 @@
+1- Compilé el c-main.c de la siguiente manera:
+
+gcc -c c-main.c -o c-main.o
+
+En este caso se llega hasta la compilación II. Es decir, se genera el objeto
+c-main.c como un archivo binario en lenguaje de máquina.
+
+2- Compilé el f-sum.f90 de la siguiente manera:
+
+gfortran -c f-sum.f90 -o f-sum.o
+
+Análogo al caso anterior, se generó el objeto f-sum.o
+
+3- Linkeo los objetos de la siguiente manera:
+
+gcc c-main.o f-sum.o -o ejecutable.e -lgfortran
+
+Genero el binario ejecutable linkeando los objetos. Al final tengo que
+agregar el flag -lgfortran para que no arme lío con el objeto que viene
+de FORTRAN y linkee las librerías que necesita para su ejecución.
