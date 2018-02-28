@@ -16,4 +16,14 @@ un solo include para incorporar la informacion del archivo calculator.h. Sin emb
 tiene otro include con el archivo "stdio.h". Entonces luego del preprocesador el main contará con toda 
 la info del stdio.h y la declaración de la función add_numbers. Todo esto lo guarda en el archivo calculator.pp.c.
 
-3. El assembler tiene 3 funciones, dos definidas dentro que son "main" y "add_numbers", y "printf" que está definida por fuera.  
+3. El assembler tiene 3 funciones, dos definidas dentro que son "main" y "add_numbers", y "printf" que está definida 
+por fuera.
+
+4. Los símbolos (o descriptores) creados en el objeto son iguales a "T" tanto para main como para add_numbers 
+y a "U" para printf. La T significa que la entrada correspondiente es de texto, y el hecho de que sea mayúscula 
+a que esa entrada es accesible desde "afuera". Por otro lado,la U significa que esa entrada no está definida.
+
+5. En el ejecutable aparecen muchos más simbolos que provienen de las librerías crt"n" que son las librerías que 
+necesita el programa para ejecutarse, además en el caso de la entrada "printf", si bien el símbolo sigue siendo U 
+porque no está definido, pero la entrada printf cambió a printf@@GLIBC_2.2.5 puesto que se linkearon de manera 
+dinámica las librerías. Entonces a pesar de que sigue sin estar definido, "ya sabe" quien lo va a correr.
